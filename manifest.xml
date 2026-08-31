@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+    Foundry - an idle production-chain game for the Venu 2 family.
+-->
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application entry="FoundryApp" id="daaa255afc014a1c8a32f5b4ec01ed3d" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.2.0" name="@Strings.AppName" type="watch-app">
+        <iq:products>
+            <iq:product id="venu2"/>
+        </iq:products>
+        <iq:permissions/>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>
