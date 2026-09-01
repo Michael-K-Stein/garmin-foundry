@@ -20,7 +20,17 @@ class GameDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 
-    function onSelect() as Boolean {
+    //! Hangs off the raw key event, not onSelect: on this hardware a screen
+    //! tap also arrives as the select behaviour, with no coordinates. An
+    //! onSelect override fired the button's action again after every real
+    //! tap - buying/unlocking regardless of which row was actually touched,
+    //! which is why every tap looked like it targeted the button. onKey
+    //! (KEY_ENTER) is reached only by the physical select button, so the two
+    //! gestures stay apart.
+    function onKey(event as WatchUi.KeyEvent) as Boolean {
+        if (event.getKey() != WatchUi.KEY_ENTER) {
+            return false;
+        }
         mView.doAction(mView.action());
         return true;
     }
